@@ -1,21 +1,23 @@
 
 const {chromium, firefox, webkit } = require('playwright');
 
+let index = 0;
+
 
 (
 
     async () =>{
-        let links = ['https://youtu.be/178hMKR4_-0','https://youtu.be/178hMKR4_-0']
 
+        while(1==1){
+        let links = ['https://youtu.be/178hMKR4_-0','https://youtu.be/178hMKR4_-0','https://www.youtube.com/watch?v=64-m27S2SFM']
+        let n=links.length
 
-        for(let link of links){
-            console.log(link)
         
         const browser1 = await chromium.launch({headless: false});
         const browser2 = await firefox.launch({headless: false});
         const browser3 = await webkit.launch({headless: false});
-        const browser4 = await chromium.launch({headless: false, channel: 'chrome'});
-        const browser5 = await chromium.launch({headless: false, channel: 'msedge'});
+        const browser4 = await chromium.launch({headless: false});
+        const browser5 = await firefox.launch({headless: false});
 
 
 
@@ -30,11 +32,11 @@ const {chromium, firefox, webkit } = require('playwright');
         const page5 = await browser5.newPage()
 
 
-        await page1.goto(link)
-        await page2.goto(link)
-        await page3.goto(link)
-        await page4.goto(link)
-        await page5.goto(link)
+        await page1.goto(links[index%n])
+        await page2.goto(links[index+1%n])
+        await page3.goto(links[index+2%n])
+        await page4.goto(links[index+3%n])
+        await page5.goto(links[index+4%n])
 
 
 
@@ -116,4 +118,5 @@ const {chromium, firefox, webkit } = require('playwright');
        
     }
 }
+    
 )();
