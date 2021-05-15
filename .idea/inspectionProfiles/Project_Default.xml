@@ -1,0 +1,35 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="redis" />
+            <item index="1" class="java.lang.String" itemvalue="typing-extensions" />
+            <item index="2" class="java.lang.String" itemvalue="importlib-metadata" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="api.urls.path" />
+          <option value="api.user.models.abstractuser" />
+          <option value="api.user.views.viewset" />
+          <option value="api.user.views.viewsets" />
+          <option value="api.user.views.permission_" />
+          <option value="main.urls.settings" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
