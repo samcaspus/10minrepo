@@ -1,5 +1,5 @@
 
-const {chromium, firefox, webkit } = require('playwright');
+const {chromium} = require('playwright');
 
 let index = 0;
 let headless = true;
@@ -98,16 +98,65 @@ try{
             return semiDuration
         });
 
+        await page1.waitForTimeout(1000);
+        details1 = await page1.evaluate(()=>{
+            return {
+                name: document.querySelector(".title").innerText,
+                views: document.querySelector(".view-count").innerText,
+                date: Date()
+               
+            }
+           })
+   
+           details2 = await page2.evaluate(()=>{
+            return {
+                name: document.querySelector(".title").innerText,
+                views: document.querySelector(".view-count").innerText,
+                date: Date()
+               
+            }
+           })
+   
+           details3 = await page3.evaluate(()=>{
+            return {
+                name: document.querySelector(".title").innerText,
+                views: document.querySelector(".view-count").innerText,
+                date: Date()
+               
+            }
+           })
+   
+           details4 = await page4.evaluate(()=>{
+            return {
+                name: document.querySelector(".title").innerText,
+                views: document.querySelector(".view-count").innerText,
+                date: Date()
+               
+            }
+           })
+   
+           details5 = await page5.evaluate(()=>{
+            return {
+                name: document.querySelector(".title").innerText,
+                views: document.querySelector(".view-count").innerText,
+                date: Date()
+               
+            }
+           })
+   
+                      
 
 
 
-        console.log(`waiting for chromium ${parseInt(duration1.split(":")[0])} min`);
-        console.log(`waiting for firefox ${parseInt(duration2.split(":")[0])} min`);
-        console.log(`waiting for webkit ${parseInt(duration3.split(":")[0])} min`);
-        console.log(`waiting for chrome ${parseInt(duration4.split(":")[0])} min`);
-        console.log(`waiting for edge ${parseInt(duration5.split(":")[0])} min`);
+           console.log(`waiting for chromium ${parseInt(duration1.split(":")[0])} min \n name = ${details1.name}, \n views = ${details1.views}, \n date = ${details1.date}}`);
+           console.log(`waiting for chromium ${parseInt(duration2.split(":")[0])} min \n name = ${details2.name}, \n views = ${details2.views}, \n date = ${details2.date}}`);
+           console.log(`waiting for chromium ${parseInt(duration3.split(":")[0])} min \n name = ${details3.name}, \n views = ${details3.views}, \n date = ${details3.date}}`);
+           console.log(`waiting for chromium ${parseInt(duration4.split(":")[0])} min \n name = ${details4.name}, \n views = ${details4.views}, \n date = ${details4.date}}`);
+           console.log(`waiting for chromium ${parseInt(duration5.split(":")[0])} min \n name = ${details5.name}, \n views = ${details5.views}, \n date = ${details5.date}}`);
+        
 	let maximumTime = Math.max(parseInt(duration1.split(":")[0]),parseInt(duration2.split(":")[0]),parseInt(duration3.split(":")[0]),parseInt(duration4.split(":")[0]),parseInt(duration5.split(":")[0]))
-	console.log("maximum time is ",maximumTime,"min")
+	
+    console.log("maximum time is ",maximumTime,"min")
 	console.log("browser log one")
         await page1.waitForTimeout(maximumTime*60000)
 	await page5.waitForTimeout(1000)
